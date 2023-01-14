@@ -1,6 +1,7 @@
 import sys
 from PyQt5.QtWidgets import QApplication,QPushButton,QWidget
-from PyQt5.QtCore import QEvent
+from PyQt5.QtCore import *
+from PyQt5 import QtGui
 
 class APP(QApplication):
     """重写QApplication类,捕捉并显示事件"""

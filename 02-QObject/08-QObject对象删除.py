@@ -29,7 +29,7 @@ class Window(QWidget):
         obj3.destroyed.connect(lambda:print("obj3被释放了"))
 
         obj2.deleteLater()  # 在下一次消息循环才销毁  删除obj2，也会删除obj3
-        print(obj1.children())
+        print(obj1.children())  # 默认会获得所有子孩子
         print(obj2)
 
 if __name__ == "__main__":

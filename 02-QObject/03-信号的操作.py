@@ -5,7 +5,7 @@ import sys
 class Window(QWidget):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("信号的曹祖")
+        self.setWindowTitle("信号的操作")
         self.resize(500,500)
         self.move(400,250)
         self.setup_ui()
@@ -21,7 +21,7 @@ class Window(QWidget):
         def destroy_slot(obj):
             print("对象被释放了",obj)
 
-        self.obj.destroyed.connect(destroy_slot)  # 关闭程序的一瞬间释放掉了
+        self.obj.destroyed.connect(destroy_slot)  # 关闭程序的一瞬间释放掉了  会传递obj
 
     def QObject信号的操作_namechanged(self):
         self.obj = QObject()
@@ -31,7 +31,7 @@ class Window(QWidget):
 
         self.obj.objectNameChanged.connect(obj_name_slot)  # 建立信号与槽的连接
         self.obj.setObjectName("AAA")
-        print("此时有",self.obj.receivers(self.obj.objectNameChanged),"个槽信号与该信号连接")
+        print("此时有",self.obj.receivers(self.obj.objectNameChanged),"个槽信号与该信号连接")  # 获取信号的接收者
 
         def receiver_test_slot():
             pass

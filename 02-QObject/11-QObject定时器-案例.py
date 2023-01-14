@@ -17,10 +17,10 @@ class MyLabel(QLabel):
     def set_sec(self,sec):
         self.setText(str(sec))
 
-    def start_my_timer(self,ms):
-        self.timer_id = self.startTimer(ms)
+    def start_my_timer(self,ms):                               # 首先要启动定时器
+        self.timer_id = self.startTimer(ms)  # 继承于QObject
 
-    def timerEvent(self,*args,**kwargs):
+    def timerEvent(self,*args,**kwargs):                       # 其次要有定时器的事件
         print("XXX")
          # 1.获取标签内容
         current_sec = int(self.text())
@@ -39,8 +39,8 @@ window.setWindowTitle("QObject定时器案例")
 window.setGeometry(400,250,500,500)
 
 label = MyLabel(window)
-label.set_sec(5)
-label.start_my_timer(500)
+label.set_sec(10)
+label.start_my_timer(1000)
 
 window.show()
 

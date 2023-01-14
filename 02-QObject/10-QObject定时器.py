@@ -3,7 +3,7 @@ from PyQt5.QtCore import QObject
 import sys
 
 class MyObject(QObject):
-    def timerEvent(self,evt):
+    def timerEvent(self,evt):  # 定时器事件
         print(evt,"1")
     
 

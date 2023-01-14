@@ -2,7 +2,7 @@ import sys
 from PyQt5.QtWidgets import QWidget,QLabel,QApplication
 
 class Window(QWidget):
-    
+    """自定义的窗口类，继承自QWidget"""
     def __init__(self):
         super().__init__()  # 进行父类的初始化
         self.setWindowTitle("面向对象版本的PyQt代码")

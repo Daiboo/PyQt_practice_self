@@ -26,8 +26,8 @@ le = QLineEdit(window)
 le.move(100,150)
 # le.setEchoMode(QLineEdit.NoEcho)  # 1
 # le.setEchoMode(QLineEdit.Normal)  # 0
-le.setEchoMode(QLineEdit.Password)  # 2
-# le.setEchoMode(QLineEdit.PasswordEchoOnEdit)  # 3
+# le.setEchoMode(QLineEdit.Password)  # 2
+le.setEchoMode(QLineEdit.PasswordEchoOnEdit)  # 3
 
 
 lb = QLabel(window)

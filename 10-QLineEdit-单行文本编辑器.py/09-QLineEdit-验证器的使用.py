@@ -11,9 +11,9 @@ class AgeValidator(QValidator):
         print(input_str,pos_int)
         try:
             if 18 < int(input_str) <= 180:
-                return QValidator.Acceptable,input_str,pos_int
+                return QValidator.Acceptable,input_str,pos_int   # 验证器接受
             elif 1<= int(input_str) <=17:
-                return QValidator.Intermediate,input_str,pos_int
+                return QValidator.Intermediate,input_str,pos_int  # 验证器处于悬停，也就是不工作
             else:
                 return QValidator.Invalid,input_str,pos_int
         except Exception:
@@ -22,18 +22,18 @@ class AgeValidator(QValidator):
                 return QValidator.Intermediate,input_str,pos_int
             return QValidator.Invalid,input_str,pos_int
 
-    # 如果用户输入不满足要求，最后还会调用fixup方法修复
+    # 如果用户输入不满足要求，最后还会调用fixup方法修复，但这种修复有些问题
 
 
 
-    def fixup(self,p_str:str) -> str:   # 结果有问题
+    def fixup(self,p_str:str,pos_int:int) -> str:   # 结果有问题
         print("调用fixup")
         try:
             if int(p_str) < 18:  # 若用户最终输入小于18，则返回18
                 return "18"
             return "180"  # 否则返回180
         except Exception:  # 如果没有输入
-            return "18"
+            return p_str
 
 # 通过继承重写的QInValidator，更简单的实现年龄验证器
 class MyAgeValidator(QIntValidator):

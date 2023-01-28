@@ -20,10 +20,11 @@ btn2 = QPushButton("btn2",window)
 btn2.move(100,0)
 btn2.pressed.connect(lambda: print("btn2被点击了"))
 
-# btn2.setAutoDefault(True)    # 用户点击了btn2后,btn2设置为默认
-btn2.setDefault(True)  # 设置btn2为默认
+btn2.setAutoDefault(True)    # 用户点击了btn2后,btn2设置为默认
+# btn2.setDefault(True)  # 设置btn2为默认
 print(btn1.autoDefault())
 print(btn2.autoDefault())
+print(btn2.isDefault())
 
 
 # 2.3展示控件

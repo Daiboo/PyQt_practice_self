@@ -5,7 +5,7 @@ from PyQt5.QtGui import *
 from PyQt5.QtCore import Qt
 """继承自QWidget.
 在setContextMenuPolicy()中，
-默认(Qt.DefaultContextMenu)为调用对象方法 contextMenuEvent ；
+默认(Qt.DefaultContextMenu)为调用对象方法 contextMenuEvent ；这种反映速度比较快
 如果设置 Qt.CustomContextMenu，则发送 customContextMenuRequested 信号"""
 
 class Window(QWidget):
@@ -30,6 +30,11 @@ window.setWindowTitle("右键菜单")
 window.resize(500, 500)
 window.move(400, 250)
 
+widget = QWidget(window)
+widget.setGeometry(0,0,100,100)
+widget.setStyleSheet("background-color:cyan;")   # 只要父级是window，菜单也能在widget显示
+
+
 def show_menu(point):
     """customContextMenuRequested的槽函数"""
     print("自定义上下文菜单",point)
@@ -41,8 +46,8 @@ def show_menu(point):
     dest_point = window.mapToGlobal(point)
     menu.exec_(dest_point)  # 把位置(全局)传递
 
-window.setContextMenuPolicy(Qt.CustomContextMenu)
-window.customContextMenuRequested.connect(show_menu)
+# window.setContextMenuPolicy(Qt.CustomContextMenu)
+# window.customContextMenuRequested.connect(show_menu)
 
 
 # 2.3展示控件

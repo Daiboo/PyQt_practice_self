@@ -33,7 +33,7 @@ answer_group.setId(rb_yes,1)  # 除了在addButton时设置id,也可以独立设
 answer_group.setId(rb_no,2)
 
 print("rb_no的id是:",answer_group.id(rb_no))
-print("answer_group中被选中的按钮id:",answer_group.checkedId())  # -1表示没有按钮被选中
+print("answer_group中被选中的按钮id:",answer_group.checkedId())  # -1表示没有按钮被选中  被选中：checked selected
 
 
 answer_group.setExclusive(False)  # 把一个按钮组取消独占，里面的单选按钮不再互斥

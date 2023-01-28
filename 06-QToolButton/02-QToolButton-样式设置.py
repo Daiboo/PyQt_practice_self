@@ -28,8 +28,8 @@ tb.setIconSize(QSize(50,50))
 # tb.setToolButtonStyle(Qt.ToolButtonTextOnly)  # 仅显示文本
 # tb.setToolButtonStyle(Qt.ToolButtonTextBesideIcon)  # 文本显示在图标旁边
 # tb.setToolButtonStyle(2)  # 文本显示在图标旁边
-# tb.setToolButtonStyle(Qt.ToolButtonTextUnderIcon)  # 文本显示在图标下方
-tb.setToolButtonStyle(Qt.ToolButtonFollowStyle)  # 遵循风格,默认的
+tb.setToolButtonStyle(Qt.ToolButtonTextUnderIcon)  # 文本显示在图标下方
+# tb.setToolButtonStyle(Qt.ToolButtonFollowStyle)  # 遵循风格,默认的仅显示图标
 
 print(tb.toolButtonStyle())
 

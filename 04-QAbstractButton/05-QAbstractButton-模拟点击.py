@@ -24,7 +24,7 @@ btn2.move(50,100)
 
 def test():
     # btn.click()
-    btn.animateClick(500)  # 动画点击
+    btn.animateClick(1000)  # 动画点击
 
 btn2.pressed.connect(test)
 

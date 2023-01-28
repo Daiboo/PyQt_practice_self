@@ -13,15 +13,11 @@ class Btn(QPushButton):
         self.showMenu()
         return super().enterEvent(a0)
 
+
 class Menu(QMenu):        
     def enterEvent(self, a0: QtCore.QEvent) -> None:
         self.show()
         return super().enterEvent(a0)
-
-    def leaveEvent(self, a0: QtCore.QEvent) -> None:
-        print("鼠标离开菜单",a0)
-        self.close()
-        return super().leaveEvent(a0)
 
 
 # 1. 创建一个应用程序对象
@@ -53,7 +49,7 @@ open_action.triggered.connect(lambda:print("打开文件"))
 exit_action = QAction(QIcon("Icons/cross_48px.ico"),"关闭",menu)
 exit_action.triggered.connect(lambda:qApp.exit())
 
-open_recent_menu = Menu()
+open_recent_menu = QMenu(btn)
 open_recent_menu.setTitle("最近打开")
 # open_recent_menu.setIcon()
 file_action = QAction("Python-Gui编程-PyQt5")

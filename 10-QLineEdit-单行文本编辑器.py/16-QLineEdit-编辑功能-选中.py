@@ -23,7 +23,7 @@ btn.move(280, 100)
 
 def cao():
     # le.setSelection(2, 1)  # 从第二个字符开始选择，选中长度为 1 的
-    # le.selectAll()  # 选中所有
+    le.selectAll()  # 选中所有
     # le.setSelection(0, len(le.text()))  # 选中所有
     # le.deselect()  # 取消选中
     print(le.hasSelectedText())  # 是否有选中的文本

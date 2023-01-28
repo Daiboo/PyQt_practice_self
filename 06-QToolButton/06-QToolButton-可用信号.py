@@ -19,7 +19,7 @@ sub_menu = QMenu(tb)
 sub_menu.setTitle("子菜单")
 sub_menu.setIcon(QIcon("Icons/plus_48px.ico"))
 action1 = QAction(QIcon("Icons/menu_48px.ico"), "行为", menu)
-action1.setData([1,2,3])
+action1.setData([1,2,3])   
 action1.triggered.connect(lambda:print("行为本身发射的信号"))
 
 action2 = QAction(QIcon("Icons/image_48px.ico"), "行为2", menu)

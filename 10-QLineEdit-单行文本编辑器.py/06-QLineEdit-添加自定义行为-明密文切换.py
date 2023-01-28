@@ -19,14 +19,18 @@ window.move(400, 250)
 le = QLineEdit(window)
 le.move(100,100)
 action = QAction(le)  # 添加自定义行为
+action.setToolTip("密码不可见")
 
 def change():
     if le.echoMode() == QLineEdit.Password:
         le.setEchoMode(QLineEdit.Normal)
+        action.setToolTip("密码可见")
         action.setIcon(QIcon("Icons/eye_48px.ico"))
     else:
         le.setEchoMode(QLineEdit.Password)
+        action.setToolTip("密码不可见")
         action.setIcon(QIcon("Icons/eye_no.ico"))
+
 
 action.setIcon(QIcon("Icons/eye_no.ico"))
 action.triggered.connect(change)

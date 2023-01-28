@@ -28,9 +28,9 @@ tb.setMenu(menu)
 
 tb.clicked.connect(lambda: print("工具按钮被点击了"))
 
-tb.setPopupMode(QToolButton.DelayedPopup)  # 设置菜单弹出方式 这是默认模式 长按按钮弹出
-tb.setPopupMode(QToolButton.MenuButtonPopup)  # 点击后弹出（有分割）
-# tb.setPopupMode(QToolButton.InstantPopup)    # 点击后弹出（无分隔）
+# tb.setPopupMode(QToolButton.DelayedPopup)  # 设置菜单弹出方式 这是默认模式 长按按钮弹出
+# tb.setPopupMode(QToolButton.MenuButtonPopup)  # 点击后弹出（有分割）
+tb.setPopupMode(QToolButton.InstantPopup)    # 点击后弹出（无分隔）
 
 
 window.show()

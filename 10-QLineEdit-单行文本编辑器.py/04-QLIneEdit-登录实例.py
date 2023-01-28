@@ -71,6 +71,7 @@ class Window(QWidget):
         #     self.account_le.setFocus()
 
     def resizeEvent(self,evt) -> None:
+        """控件的大小和位置设定"""
         widget_w = 180
         widget_h = 38
         margin = 40
